@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { gsap } from 'gsap';
-import TextBlock from './textblock.jsx';
+import TextBlock from './textblock';
 import gamelanAudio from '../assets/gamelan.mp3';
 import './first.css'
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +27,40 @@ const Home = () => {
     const elementToAnimate = document.getElementById('cloud');
     const elementToAnimate2 = document.getElementById('back');
     const elementToAnimate3 = document.getElementById('sejarahbatik');
+
+    if (elementToAnimate) {
+      gsap.to(elementToAnimate, {
+        x: () => gsap.utils.random(-2, 2) + '%',
+        y: () => gsap.utils.random(-2, 2) + '%',
+        duration: 2,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+      });
+    }
+
+    if (elementToAnimate2) {
+      gsap.to(elementToAnimate2, {
+        x: () => gsap.utils.random(-2, 2) + '%',
+        y: () => gsap.utils.random(-2, 2) + '%',
+        duration: 2,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+      });
+    }
+
+    if (elementToAnimate3) {
+      gsap.to(elementToAnimate3, {
+        x: () => gsap.utils.random(2, -2) + '%',
+        y: () => gsap.utils.random(2, -2) + '%',
+        duration: 1,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+      });
+    }
+
 
     gsap.to(elementToAnimate, {
       x: () => gsap.utils.random(-2, 2) + '%',
@@ -58,11 +92,16 @@ const Home = () => {
 
   useEffect(() => {
     if (isFullScreen) {
-      document.documentElement.requestFullscreen();
-    } else {
-      document.exitFullscreen();
+      document.documentElement.requestFullscreen().catch((error) => {
+        console.log("Error entering fullscreen:", error);
+      });
+    } else if (document.fullscreenElement) {
+      document.exitFullscreen().catch((error) => {
+        console.log("Error exiting fullscreen:", error);
+      });
     }
   }, [isFullScreen]);
+  
 
   const handleCheckChange = () => {
     if (isPlaying) {
@@ -151,7 +190,7 @@ const Home = () => {
           <div className="animation_layer2 parallax" id="cloud"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={2.5}>
-          <div className="animation_layer parallax" id="down"></div>
+          <div className="animation_layer parallax" id="downs"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.7}>
           <TextBlock />
