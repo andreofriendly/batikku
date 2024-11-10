@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { gsap } from 'gsap';
-import TextBlock from './textBlock.jsx';
+import TextBlock from './textBlock.js';
 import gamelanAudio from '../assets/gamelan.mp3';
 import './first.css'
 import { useNavigate } from 'react-router-dom';
