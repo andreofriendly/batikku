@@ -1,0 +1,12 @@
+.button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  .button button{
+    margin-right: 20px;
+
+  }

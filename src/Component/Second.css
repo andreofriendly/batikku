@@ -1,0 +1,131 @@
+.search-page {
+  max-width: 840px;
+  margin: 0 ;
+  padding: 20px;
+}
+
+.button {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.button button {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-results {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.featured-carousel {
+  display: flex;
+}
+
+.batik-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 300px;
+  height: 600px;
+}
+
+.batik-card:hover {
+  transform: translateY(-5px);
+}
+
+.batik-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.batik-details {
+  padding: 10px;
+}
+
+.batik-name {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.batik-info {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .search-page {
+    padding: 10px;
+  }
+
+  .search-heading {
+    font-size: 20px;
+  }
+
+  .search-input,
+  .search-button {
+    font-size: 14px;
+  }
+
+  .search-results {
+    overflow-x: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .batik-card {
+    min-width: 150px;
+  }
+
+  .batik-image {
+    height: 120px;
+  }
+
+  .batik-name {
+    font-size: 14px;
+  }
+
+  .batik-info {
+    font-size: 12px;
+  }
+}
